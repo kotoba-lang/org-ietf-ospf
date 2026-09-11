@@ -88,7 +88,7 @@ Returned, never thrown. Every decoder returns `[:ok ...]` or
 
 ```sh
 clojure -M:test                                                        # JVM
-nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljs   # ClojureScript
+nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljk   # ClojureScript
 ```
 
 The ClojureScript run is not a formality. `ospf.bytes` exists precisely

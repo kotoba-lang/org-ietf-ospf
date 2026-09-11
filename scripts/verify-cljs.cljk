@@ -7,7 +7,7 @@
 ;; on `clj -M:test` has only proven itself on the platform least likely to
 ;; expose that class of bug.
 ;;
-;;   nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljs
+;;   nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljk
 (ns verify-cljs
   (:require [clojure.test :as t]
             [ospf.core-test]))
