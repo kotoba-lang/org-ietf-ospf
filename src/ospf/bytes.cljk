@@ -35,7 +35,7 @@
 ;; produces a *negative* Int32 (its two's-complement reading), and a
 ;; subsequent `bit-or` with the lower bytes silently keeps that sign flip
 ;; instead of raising it. The JVM's `bit-shift-left` has no such ceiling
-;; (Clojure longs are 64-bit), so this would round-trip clean on `clj -M`
+;; (Clojure longs are 64-bit), so this would round-trip clean on `kbb -M`
 ;; and only break under `nbb`/ClojureScript — exactly the kind of
 ;; platform-only bug this workspace's `.cljc` discipline exists to catch
 ;; before it ships (see `modbus.crc`'s own note on `(map int str)` for the

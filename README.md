@@ -87,15 +87,15 @@ Returned, never thrown. Every decoder returns `[:ok ...]` or
 ## Verify
 
 ```sh
-clojure -M:test                                                        # JVM
-nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljk   # ClojureScript
+kbb -M:test                                                        # JVM
+kbb --backend sci --classpath "$(kbb -A:cljs -Spath)" scripts/verify-cljs.cljk   # ClojureScript
 ```
 
 The ClojureScript run is not a formality. `ospf.bytes` exists precisely
 because JavaScript's bitwise operators coerce through ToInt32 where the JVM's
 are 64-bit: `(bit-shift-left 0xC0 24)` — needed for any Router ID from
 128.0.0.0 up — yields a *negative* Int32 under ClojureScript and the correct
-value on the JVM. A codec that only round-trips on `clojure -M:test` has
+value on the JVM. A codec that only round-trips on `kbb -M:test` has
 proven itself on the platform least likely to expose that class of bug.
 
 ### What is RFC-cited and what is constructed
